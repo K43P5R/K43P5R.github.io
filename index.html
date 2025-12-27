@@ -1,234 +1,270 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
-  <title>main</title>
-  <style>
-    /* Professional Resume Styling */
-    body {
-        font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-        background-color: #f4f4f7;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasper Gundewall - Resume</title>
+    <style>
+        /* Base Styles - LaTeX Serif Look */
+        :root {
+            --bg-color: #f0f2f5;
+            --paper-color: #ffffff;
+            --text-main: #000000;
+        }
 
-    /* The "Paper" Container */
-    article {
-        background: white;
-        padding: 50px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.2;
+            margin: 0;
+            padding: 20px;
+        }
 
-    /* Download Button */
-    .download-btn {
-        display: inline-block;
-        background: #2563eb;
-        color: white;
-        padding: 12px 20px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        transition: background 0.2s;
-    }
-    .download-btn:hover { background: #1d4ed8; }
+        .resume-container {
+            max-width: 850px;
+            margin: 20px auto;
+            background: var(--paper-color);
+            padding: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-    /* Resume Structure */
-    h1 { border-bottom: 2px solid #2563eb; padding-bottom: 10px; color: #111; }
-    h2 { color: #2563eb; margin-top: 30px; border-bottom: 1px solid #eee; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-        body { margin: 10px auto; }
-        article { padding: 20px; }
-    }
-</style>
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.8rem;
+            font-weight: normal;
+        }
 
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11pt;
+            text-align: left;
+        }
+
+        .contact-left { width: 50%; vertical-align: top; }
+        .contact-right { width: 50%; text-align: right; vertical-align: top; }
+
+        .contact-table a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        section { margin-top: 15px; margin-bottom: 10px; }
+
+        h2 {
+            font-size: 1.2rem;
+            font-variant: small-caps;
+            font-weight: normal;
+            border-bottom: 1px solid #000;
+            margin: 0 0 8px 0;
+            padding-bottom: 2px;
+        }
+
+        .entry { margin-bottom: 12px; }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .entry-sub {
+            display: flex;
+            justify-content: space-between;
+            font-style: italic;
+            font-size: 10pt;
+            margin-bottom: 2px;
+        }
+
+        ul {
+            margin: 2px 0 0 25px;
+            padding: 0;
+        }
+
+        li {
+            font-size: 10pt;
+            margin-bottom: 2px;
+        }
+
+        .skills-grid p {
+            font-size: 10pt;
+            margin: 4px 0;
+        }
+
+        /* Download Button */
+        .download-bar {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 10px;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .resume-container { padding: 20px; }
+            h1 { font-size: 2rem; }
+            .contact-table, .contact-left, .contact-right {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .entry-header, .entry-sub { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-<a href="kasper_gundewall_resume.pdf" class="download-btn">📥 Download PDF Version</a>
-<div class="center">
-<p><h1>Kasper Gundewall</h1><br />
-</p>
-</div>
-<table>
-<tbody>
-<tr>
-<td style="text-align: left;">Författarvägen 48</td>
-<td style="text-align: right;"><a
-href="mailto:kasper.gundewall@gmail.com">kasper.gundewall@gmail.com</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">167 75 Bromma, Sweden</td>
-<td style="text-align: right;"><a
-href="https://www.linkedin.com/in/kasper-gundewall-a153a12a9/">linkedin.com/in/kasper-gundewall</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">+46 76 182 31 70</td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-<h1 id="education">Education</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>KTH Royal Institute of
-Technology</strong></td>
-<td style="text-align: right;">Aug. 2024 – Jun. 2029</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>M.Sc. in Engineering, Industrial
-Engineering and Management</em></td>
-<td style="text-align: right;"><em>Stockholm, Sweden</em></td>
-</tr>
-</tbody>
-</table></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Enskilda Gymnasiet</strong></td>
-<td style="text-align: right;">Aug. 2020 – May 2024</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>High School Diploma</em></td>
-<td style="text-align: right;"><em>Stockholm, Sweden</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Spent one year abroad in the US, gaining
-intercultural proficiency and English fluency. </span> </span></p></li>
-</ul></li>
-</ul>
-<h1 id="work-experience">Work Experience</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>AFS-USA Intercultural
-Programs</strong></td>
-<td style="text-align: right;">Aug. 2023 – Jan. 2024</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Liaison - Volunteer</em></td>
-<td style="text-align: right;"><em>Remote / Stockholm</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Guided exchange students and host families with
-tools and resources necessary for continuing their exchange year.
-</span> </span></p></li>
-<li><p><span> <span>Conducted surveys among service recipients to gauge
-suitability for possible exchange students. </span> </span></p></li>
-</ul></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Förskolan
-Djupdalsvägen</strong></td>
-<td style="text-align: right;">Jun. 2023</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Kindergarten Assistant</em></td>
-<td style="text-align: right;"><em>Stockholm, Sweden</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Enhanced learning experiences by incorporating
-hands-on activities and creative projects into the curriculum. </span>
-</span></p></li>
-<li><p><span> <span>Collaborated with lead teachers to develop and
-implement engaging lesson plans tailored to individual needs. </span>
-</span></p></li>
-<li><p><span> <span>Boosted children’s social and emotional development
-through positive reinforcement. </span> </span></p></li>
-</ul></li>
-</ul>
-<h1 id="student-engagement">Student Engagement</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Student Chapter
-(Sektionen)</strong></td>
-<td style="text-align: right;">Aug. 2024 – Present</td>
-</tr>
-<tr>
-<td style="text-align: left;"><em>Active Member</em></td>
-<td style="text-align: right;"><em>KTH, Stockholm</em></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span><strong>IT-Responsible:</strong> Managed technical
-infrastructure and IT-related issues for the student chapter. </span>
-</span></p></li>
-<li><p><span> <span><strong>Election Committee:</strong> Interviewed
-candidates and prepared nominations for chapter positions. </span>
-</span></p></li>
-<li><p><span> <span><strong>Ispexet (Bass Guitarist):</strong> Active
-member of the band, playing bass guitar for the chapter’s interactive
-theatre productions. </span> </span></p></li>
-</ul></li>
-</ul>
-<h1 id="projects-technical-interests">Projects &amp; Technical
-Interests</h1>
-<ul>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Dagen I Website</strong> <span
-class="math inline">|</span> <em>Web Development 2024</em></td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Developed and deployed the official website for
-Dagen I, dageni.se, serving as the information hub for the event.
-</span> </span></p></li>
-</ul></li>
-<li><table>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Cybersecurity</strong> <span
-class="math inline">|</span> <em>Network Security</em></td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><span> <span>Completed the <strong>OverTheWire Bandit</strong>
-wargame, demonstrating proficiency in Linux command line, SSH, and basic
-security concepts. </span> </span></p></li>
-<li><p><span> <span>Strong interest in CTF (Capture The Flag) challenges
-and cybersecurity fundamentals. </span> </span></p></li>
-</ul></li>
-</ul>
-<h1 id="skills">Skills</h1>
-<div class="itemize">
-<p><span> <strong>Languages</strong><span>: Swedish (Native), English
-(Fluent)</span><br />
-<strong>Technical</strong><span>: Basic Computer Science, Web
-Development, Linux/Bash, Python, C++, Matlab, Latex</span><br />
-<strong>Awards</strong><span>: Diploma for good results in Kangourou des
-mathématiques 2020 - Hosted by the Royal Science Academy and the
-National Center for Mathematics Education</span><br />
-<strong>Soft Skills</strong><span>: Problem-Solving, Fast Learner,
-Intercultural Communication</span> </span></p>
-</div>
+
+    <div class="download-bar">
+        <a href="kasper_gundewall_resume.pdf" class="btn" target="_blank">📥 Download PDF</a>
+    </div>
+
+    <main class="resume-container">
+        <header>
+            <h1>Kasper Gundewall</h1>
+            <table class="contact-table">
+                <tr>
+                    <td class="contact-left">
+                        Författarvägen 48<br>
+                        167 75 Bromma, Sweden<br>
+                        +46 76 182 31 70
+                    </td>
+                    <td class="contact-right">
+                        <a href="mailto:kasper.gundewall@gmail.com">kasper.gundewall@gmail.com</a><br>
+                        <a href="https://www.linkedin.com/in/kasper-gundewall-a153a12a9/">linkedin.com/in/kasper-gundewall</a>
+                    </td>
+                </tr>
+            </table>
+        </header>
+
+        <section>
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>KTH Royal Institute of Technology</span>
+                    <span>Aug. 2024 – Jun. 2029</span>
+                </div>
+                <div class="entry-sub">
+                    <span>M.Sc. in Engineering, Industrial Engineering and Management</span>
+                    <span>Stockholm, Sweden</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Enskilda Gymnasiet</span>
+                    <span>Aug. 2020 – May 2024</span>
+                </div>
+                <div class="entry-sub">
+                    <span>High School Diploma</span>
+                    <span>Stockholm, Sweden</span>
+                </div>
+                <ul>
+                    <li>Spent one year abroad in the US, gaining intercultural proficiency and English fluency.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>AFS-USA Intercultural Programs</span>
+                    <span>Aug. 2023 – Jan. 2024</span>
+                </div>
+                <div class="entry-sub">
+                    <span>Liaison - Volunteer</span>
+                    <span>Remote / Stockholm</span>
+                </div>
+                <ul>
+                    <li>Guided exchange students and host families with tools and resources necessary for continuing their exchange year.</li>
+                    <li>Conducted surveys among service recipients to gauge suitability for possible exchange students.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Förskolan Djupdalsvägen</span>
+                    <span>Jun. 2023</span>
+                </div>
+                <div class="entry-sub">
+                    <span>Kindergarten Assistant</span>
+                    <span>Stockholm, Sweden</span>
+                </div>
+                <ul>
+                    <li>Enhanced learning experiences by incorporating hands-on activities and creative projects into the curriculum.</li>
+                    <li>Collaborated with lead teachers to develop and implement engaging lesson plans tailored to individual needs.</li>
+                    <li>Boosted children's social and emotional development through positive reinforcement.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Student Engagement</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Student Chapter (Sektionen)</span>
+                    <span>Aug. 2024 – Present</span>
+                </div>
+                <div class="entry-sub">
+                    <span>Active Member</span>
+                    <span>KTH, Stockholm</span>
+                </div>
+                <ul>
+                    <li><strong>IT-Responsible:</strong> Managed technical infrastructure and IT-related issues for the student chapter.</li>
+                    <li><strong>Election Committee:</strong> Interviewed candidates and prepared nominations for chapter positions.</li>
+                    <li><strong>Ispexet (Bass Guitarist):</strong> Active member of the band, playing bass guitar for the chapter's interactive theatre productions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects & Technical Interests</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Dagen I Website | Web Development 2024</span>
+                </div>
+                <ul>
+                    <li>Developed and deployed the official website for Dagen I, <a href="https://dageni.se">dageni.se</a>, serving as the information hub for the event.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Cybersecurity | Network Security</span>
+                </div>
+                <ul>
+                    <li>Completed the <strong>OverTheWire Bandit</strong> wargame, demonstrating proficiency in Linux command line, SSH, and basic security concepts.</li>
+                    <li>Strong interest in CTF (Capture The Flag) challenges and cybersecurity fundamentals.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <p><strong>Languages:</strong> Swedish (Native), English (Fluent)</p>
+                <p><strong>Technical:</strong> Basic Computer Science, Web Development, Linux/Bash, Python, C++, Matlab, Latex</p>
+                <p><strong>Awards:</strong> Diploma for good results in Kangourou des mathématiques 2020</p>
+                <p><strong>Soft Skills:</strong> Problem-Solving, Fast Learner, Intercultural Communication</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
